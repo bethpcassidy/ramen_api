@@ -12,7 +12,7 @@ class LocationsController < ApplicationController
   def create
     @location = Location.create(
       location_name: params[:location_name],
-      zipcode: params[:zipcode],
+      zip_id: params[:zip_id],
       menu: params[:menu],
     )
     render json: @location
@@ -22,7 +22,7 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
     @location.update(
       location_name: params[:location_name],
-      zipcode: params[:zipcode],
+      zip_id: params[:zip_id],
       menu: params[:menu],
     )
     render json: @location
