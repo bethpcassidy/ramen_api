@@ -9,10 +9,9 @@ class ZipsController < ApplicationController
     render json: @zip
   end
 
-
   def create
     @zip = Zip.create(
-      zip_number: params[:zip_number]
+      zip_number: params[:zip_number],
     )
     render json: @zip
   end
@@ -20,7 +19,7 @@ class ZipsController < ApplicationController
   def update
     @zip = Zip.find(params[:id])
     @zip.update(
-      zip_number: params[:zip_number]
+      zip_number: params[:zip_number],
     )
     render json: @zip
   end
@@ -30,4 +29,5 @@ class ZipsController < ApplicationController
     @zip = Zip.find(params[:id])
     @zip.destroy
     render json: @zips
+  end
 end
