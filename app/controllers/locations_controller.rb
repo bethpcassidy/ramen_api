@@ -1,12 +1,14 @@
 class LocationsController < ApplicationController
+  before_action :set_location, only: %i[ show update destroy ]
+
   def index
     @locations = Location.all
-    render json: @locations
+    render "location/index"
   end
 
   def show
     @location = Location.find(params[:id])
-    render json: @location
+    render "location/show"
   end
 
   def create
@@ -25,7 +27,7 @@ class LocationsController < ApplicationController
       zip_id: params[:zip_id],
       menu: params[:menu],
     )
-    render json: @location
+    render :show, status: :created, location: @bio
   end
 
   def destroy
@@ -33,5 +35,9 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
     @location.destroy
     render json: @locations
+  end
+
+  def set_location
+    @zip = Location.find(params[:id])
   end
 end

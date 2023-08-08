@@ -1,12 +1,14 @@
 class ZipsController < ApplicationController
+  before_action :set_zip, only: %i[ show update destroy ]
+
   def index
     @zips = Zip.all
-    render json: @zips
+    render :index
   end
 
   def show
     @zip = Zip.find(params[:id])
-    render json: @zip
+    render :show
   end
 
   def create
@@ -29,5 +31,9 @@ class ZipsController < ApplicationController
     @zip = Zip.find(params[:id])
     @zip.destroy
     render json: @zips
+  end
+
+  def set_zip
+    @zip = Zip.find(params[:id])
   end
 end
