@@ -45,26 +45,30 @@ class ZipsController < ApplicationController
 
     # @zip = Zip.find(params[:zip_number])
     @zips = Zip.all
-
+    i2 = 0
     i = 0
     array = []
     while i < @zips.length
       if @zips[i].zip_number == params[:zip_number]
         array << @zips[i]
+        i2 = i
       end
       i = i + 1
     end
 
     #allows for a get request query by zipcode, step 2 is getting the rest to show up in order as well
 
-    # i1 = 0
-    # while i1 < @zips.length
-    #   if @zip[i].zip_number == params[:zip_number]
-    #     break
-    #   else
-    #     xcheck = array[0].x - @zip[i].x
-    #     ycheck = array[0].y - @zip[i].y
-
+    i1 = 0
+    d = 0
+    while i1 < @zips.length
+      if @zips[i1].zip_number == params[:zip_number]
+      else
+        d = Math.sqrt((@zips[i2].x - @zips[i1].x) ** 2 + (@zips[i2].y - @zips[i1].y) ** 2)
+        @zips[i1].d = d
+        array << @zips[i1]
+      end
+      i1 = i1 + 1
+    end
     @zips = array
 
     # @zips = Zip.find(:zip_number params[:zip_number])
