@@ -40,7 +40,6 @@ class ZipsController < ApplicationController
   end
 
   def math
-    #   #ok so my idea here is instead of pinging maps api each time, set an internal x/y coordinate for each restaurant and dictate distance based on that. eventually might swap the logic here to a better system with different tables
     #   @zips = Zip.all
 
     # @zip = Zip.find(params[:zip_number])
@@ -70,10 +69,11 @@ class ZipsController < ApplicationController
       end
       i1 = i1 + 1
     end
+
     @zips = array
-
-    # @zips = Zip.find(:zip_number params[:zip_number])
-
+    @zips[0].d = 0
+    @zips.sort_by { |zip| [zip.d, zip.id] }
+    #sorts by .d and backups to .id on ties
     render :math
   end
 end
