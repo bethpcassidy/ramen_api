@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :zips, format: "json"
   resources :locations, format: "json"
 
-  get "/zips/math/:zip_number" => "zips#math", format: "json"
+  get "/zips/search/:zip_number" => "zips#math", format: "json"
   # resources :zips, only: [:index, :show, :create, :update, :destroy]
   # resources :locations, only: [:index, :show, :create, :update, :destroy]
 

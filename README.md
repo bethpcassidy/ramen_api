@@ -1,24 +1,17 @@
-# README
+# Brooklyn Ramen_API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a rails API that searches for nearby ramen restaurants given a Brooklyn zipcode.
 
-Things you may want to cover:
+# Instructions
 
-* Ruby version
+Open the project in your terminal.
 
-* System dependencies
+Enter the following commands:
 
-* Configuration
+'rails db:migrate:
+'rails db:seed;
+'rails bundle'
+'rails s'
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Once the server is running, you can request data useing this link.
+'localhost:3000/zips/search/(#zipcode)'
