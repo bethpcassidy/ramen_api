@@ -3,12 +3,12 @@ class LocationsController < ApplicationController
 
   def index
     @locations = Location.all
-    render "location/index"
+    render :index
   end
 
   def show
     @location = Location.find(params[:id])
-    render "location/show"
+    render :show
   end
 
   def create

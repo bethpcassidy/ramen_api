@@ -66,6 +66,7 @@ class ZipsController < ApplicationController
         d = Math.sqrt((@zips[i2].x - @zips[i1].x) ** 2 + (@zips[i2].y - @zips[i1].y) ** 2)
         @zips[i1].d = d
         array << @zips[i1]
+        #applies distance formula between searched point and each point in the database
       end
       i1 = i1 + 1
     end
@@ -74,22 +75,5 @@ class ZipsController < ApplicationController
     # @zips = Zip.find(:zip_number params[:zip_number])
 
     render :math
-    #   array = all[@zips.x, @zips.y, @zip.zip_id]
-    #   i = 0
-    #   final_array
-    #   while i < array.length
-    #     #if statement + loop that checks if zipcode has been done already
-    #     difference_x = slot[0] - array[i[0]]
-    #     difference_y = slot[1] - array[i[1]]
-
-    #     |difference_x| + |difference_y| = total_difference
-
-    #     final_array << [total_difference, zip_id]
-
-    #     #sort by low to high based on total difference
-    #     #show locations by zip_id
-
-    #   end
-
   end
 end
