@@ -1,4 +1,4 @@
-# Brooklyn Ramen_API
+# Ramen_API
 
 This is a rails API that searches for nearby ramen restaurants given a Brooklyn zipcode.
 
