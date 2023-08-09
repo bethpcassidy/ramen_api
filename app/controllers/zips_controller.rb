@@ -14,6 +14,8 @@ class ZipsController < ApplicationController
   def create
     @zip = Zip.create(
       zip_number: params[:zip_number],
+      x: params[:x],
+      y: params[:y],
     )
     render json: @zip
   end
@@ -52,6 +54,17 @@ class ZipsController < ApplicationController
       end
       i = i + 1
     end
+
+    #allows for a get request query by zipcode, step 2 is getting the rest to show up in order as well
+
+    # i1 = 0
+    # while i1 < @zips.length
+    #   if @zip[i].zip_number == params[:zip_number]
+    #     break
+    #   else
+    #     xcheck = array[0].x - @zip[i].x
+    #     ycheck = array[0].y - @zip[i].y
+
     @zips = array
 
     # @zips = Zip.find(:zip_number params[:zip_number])
