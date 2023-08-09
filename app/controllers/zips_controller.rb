@@ -44,6 +44,18 @@ class ZipsController < ApplicationController
     # @zip = Zip.find(params[:zip_number])
     @zips = Zip.all
 
+    i = 0
+    array = []
+    while i < @zips.length
+      if @zips[i].zip_number == params[:zip_number]
+        array << @zips[i]
+      end
+      i = i + 1
+    end
+    @zips = array
+
+    # @zips = Zip.find(:zip_number params[:zip_number])
+
     render :math
     #   array = all[@zips.x, @zips.y, @zip.zip_id]
     #   i = 0
