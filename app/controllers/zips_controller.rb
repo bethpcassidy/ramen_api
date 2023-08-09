@@ -43,37 +43,42 @@ class ZipsController < ApplicationController
     #   @zips = Zip.all
 
     # @zip = Zip.find(params[:zip_number])
-    @zips = Zip.all
-    i2 = 0
-    i = 0
-    array = []
-    while i < @zips.length
-      if @zips[i].zip_number == params[:zip_number]
-        array << @zips[i]
-        i2 = i
+    if params[:zip_number] == "("
+      @zips = ["Type a brooklyn zipcode in place of (#zipcode) in the url."]
+      render json: @zips
+    else
+      @zips = Zip.all
+      i2 = 0
+      i = 0
+      array = []
+      while i < @zips.length
+        if @zips[i].zip_number == params[:zip_number]
+          array << @zips[i]
+          i2 = i
+        end
+        i = i + 1
       end
-      i = i + 1
-    end
 
-    #allows for a get request query by zipcode, step 2 is getting the rest to show up in order as well
+      #allows for a get request query by zipcode, step 2 is getting the rest to show up in order as well
 
-    i1 = 0
-    d = 0
-    while i1 < @zips.length
-      if @zips[i1].zip_number == params[:zip_number]
-      else
-        d = Math.sqrt((@zips[i2].x - @zips[i1].x) ** 2 + (@zips[i2].y - @zips[i1].y) ** 2)
-        @zips[i1].d = d
-        array << @zips[i1]
-        #applies distance formula between searched point and each point in the database
+      i1 = 0
+      d = 0
+      while i1 < @zips.length
+        if @zips[i1].zip_number == params[:zip_number]
+        else
+          d = Math.sqrt((@zips[i2].x - @zips[i1].x) ** 2 + (@zips[i2].y - @zips[i1].y) ** 2)
+          @zips[i1].d = d
+          array << @zips[i1]
+          #applies distance formula between searched point and each point in the database
+        end
+        i1 = i1 + 1
       end
-      i1 = i1 + 1
-    end
 
-    @zips = array
-    @zips[0].d = 0
-    @zips.sort_by { |zip| [zip.d, zip.id] }
-    #sorts by .d and backups to .id on ties
-    render :math
+      @zips = array
+      @zips[0].d = 0
+      @zips.sort_by { |zip| [zip.d, zip.id] }
+      #sorts by .d and backups to .id on ties
+      render :math
+    end
   end
 end
