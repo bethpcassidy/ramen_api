@@ -78,6 +78,18 @@ class ZipsController < ApplicationController
       @zips[0].d = 0
       @zips = @zips.sort_by { |zip| [zip.d, zip.id] }
       #sorts by .d and backups to .id on ties
+      final_array = @zips
+      ia = 0
+      while ia < final_array.length
+        if final_array[ia].locations == []
+          final_array.delete_at(ia)
+          ia = ia - 1
+          #stops zipcodes from showing that don't have locations
+          #by subtracting the index it makes up for the decrease in value of the total array.length.
+        end
+        ia = ia + 1
+      end
+      @zips = final_array
       render :math
     end
   end
