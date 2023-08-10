@@ -1,6 +1,4 @@
-# Ramen_API
-
-<img src="https://i.imgur.com/K0ZuOgL.png" alt="drawing" width="200"/>
+<img src="https://i.imgur.com/K0ZuOgL.png" alt="drawing" width="400"/>
 
 This is a rails API that searches for nearby ramen restaurants given a Brooklyn zipcode.
 
