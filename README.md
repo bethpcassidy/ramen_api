@@ -1,8 +1,8 @@
 <p align="center">
-<img src="https://i.imgur.com/K0ZuOgL.png" alt="drawing" width="400"/>
+<img src="https://i.imgur.com/xO10ghf.png" alt="drawing" width="300"/>
 </p>
 
-This is a rails API that searches for nearby ramen restaurants given a Brooklyn zipcode.
+This is a Ruby on Rails API that searches for nearby ramen restaurants given a Brooklyn zipcode.
 
 # Instructions
 
@@ -21,3 +21,5 @@ Enter the following commands:
 Once the server is running, you can request data useing this link in your browser or request file.
 
 `localhost:3000/zips/search/(#zipcode)`
+
+Responses are outputed in JSON format and are sorted by distance from the given zipcode.
