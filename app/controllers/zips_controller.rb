@@ -84,7 +84,7 @@ class ZipsController < ApplicationController
         if final_array[ia].locations == []
           final_array.delete_at(ia)
           ia = ia - 1
-          #stops zipcodes from showing that don't have locations
+          #stops zipcodes from showing empty locations
           #by subtracting the index it makes up for the decrease in value of the total array.length.
         end
         ia = ia + 1
