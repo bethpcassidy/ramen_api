@@ -16,6 +16,6 @@ Enter the following commands:
 
 `rails s`
 
-Once the server is running, you can request data useing this link.
+Once the server is running, you can request data useing this link in your browser or request file.
 
 `localhost:3000/zips/search/(#zipcode)`
