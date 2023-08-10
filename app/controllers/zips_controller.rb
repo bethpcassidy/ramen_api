@@ -76,7 +76,7 @@ class ZipsController < ApplicationController
 
       @zips = array
       @zips[0].d = 0
-      @zips.sort_by { |zip| [zip.d, zip.id] }
+      @zips = @zips.sort_by { |zip| [zip.d, zip.id] }
       #sorts by .d and backups to .id on ties
       render :math
     end

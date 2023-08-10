@@ -15,3 +15,13 @@
 # zip1 = Zip.create(zip_number: "11216"),
 # zip2 = Zip.create(zip_number: "11211"),
 # zip3 = Zip.create(zip_number: "11206")
+# zip4 = Zip.create(zip_number: "11221", x: 6, y: 8, d: 0)
+# zip5 = Zip.create(zip_number: "11201", x: 3, y: 8, d: 0)
+# zip6 = Zip.create(zip_number: "11205", x: 4, y: 8, d: 0)
+# zip7 = Zip.create(zip_number: "11222", x: 5, y: 10, d: 0)
+# zip8 = Zip.create(zip_number: "11237", x: 6, y: 9, d: 0)
+# zip9 = Zip.create(zip_number: "11233", x: 6, y: 7, d: 0)
+# zip10 = Zip.create(zip_number: "11212", x: 6, y: 7, d: 0)
+# zip11 = Zip.create(zip_number: "11203", x: 6, y: 5, d: 0)
+# zip12 = Zip.create(zip_number: "11215", x: 3, y: 6, d: 0)
+#--
