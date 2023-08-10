@@ -2,6 +2,8 @@
 <img src="https://i.imgur.com/xO10ghf.png" alt="drawing" width="400"/>
 </p>
 
+# About
+
 This is a Ruby on Rails API that searches for nearby ramen restaurants given a Brooklyn zipcode.
 
 # Instructions
