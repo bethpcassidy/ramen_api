@@ -26,6 +26,13 @@ zip20 = Zip.create(zip_number: 11218, x: 3.5, y: 5, d: 0)
 zip21 = Zip.create(zip_number: 11226, x: 5, y: 5, d: 0)
 zip22 = Zip.create(zip_number: 11238, x: 4.5, y: 7, d: 0)
 zip23 = Zip.create(zip_number: 11217, x: 3.5, y: 7, d: 0)
+zip24 = Zip.create(zip_number: 11236, x: 8, y: 4, d: 0)
+zip25 = Zip.create(zip_number: 11239, x: 9, y: 5, d: 0)
+zip26 = Zip.create(zip_number: 11204, x: 3, y: 3, d: 0)
+zip27 = Zip.create(zip_number: 11228, x: 2, y: 3, d: 0)
+zip28 = Zip.create(zip_number: 11214, x: 2.5, y: 2, d: 0)
+zip29 = Zip.create(zip_number: 11219, x: 3, y: 4, d: 0)
+zip30 = Zip.create(zip_number: 11230, x: 4, y: 3, d: 0)
 
 --location4 = Location.create(location_name: "Kogane", zip_id: 5, menu: "https://www.koganeramenny.com/")
 
